@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title>Venkata Mukund Kashyap Yedunuthala • Image convolution using Message Passing Interface (MPI)</title>
+
+    
+    
+    
+        <link rel=icon href='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg" viewBox="0 0 105 55"><text y=".7em" font-size="90">⚛️</text></svg>'>
+    
+
+    
+    <link rel="alternate" type="application/atom+xml" title="Venkata Mukund Kashyap Yedunuthala" href="https://mukund-yedunuthala.github.io/atom.xml">
+    
+    
+    
+    
+        <link rel="stylesheet" href=https://mukund-yedunuthala.github.io/custom_subset.css>
+    
+
+    
+        <link rel="stylesheet" href="https://mukund-yedunuthala.github.io/main.css?h=32df1d836cbdcc44c5bd" />
+    
+    <meta name="color-scheme" content="light dark">
+        <meta name="description" content="Application of convolution kernels such as sharpening, blurring, edge detection to grayscale images in parallel using MPI." />
+        <meta property="og:description" content="Application of convolution kernels such as sharpening, blurring, edge detection to grayscale images in parallel using MPI.">
+
+    
+        <meta name="robots" content="index, nofollow">
+    
+
+    <meta property="og:title" content="Venkata Mukund Kashyap Yedunuthala">
+    <meta property="og:type" content="article" />
+
+    
+
+    
+    <meta property="og:url" content="https:&#x2F;&#x2F;mukund-yedunuthala.github.io&#x2F;projects&#x2F;hpc-img-convolution&#x2F;">
+    
+    <meta property="og:site_name" content="Venkata Mukund Kashyap Yedunuthala">
+
+    <meta http-equiv="Content-Security-Policy"
+    content="default-src 'self';font-src &#x27;self&#x27; data:;img-src &#x27;self&#x27; https:&#x2F;&#x2F;* data:;script-src &#x27;self&#x27;;style-src &#x27;self&#x27;;frame-src player.vimeo.com https:&#x2F;&#x2F;www.youtube-nocookie.com">
+        <noscript><link rel="stylesheet" href="https://mukund-yedunuthala.github.io/no_js.css"/></noscript>
+        <script type="text/javascript" src="https://mukund-yedunuthala.github.io/js/initializeTheme.min.js"></script>
+        <script defer src="https://mukund-yedunuthala.github.io/js/themeSwitcher.min.js"/></script></head>
+
+
+<body>
+    <header>
+    <nav class="navbar">
+        <div class="nav-title">
+            <a class="home-title" href=https://mukund-yedunuthala.github.io>Venkata Mukund Kashyap Yedunuthala</a>
+        </div>
+            <div class="nav-navs">
+                <ul>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://mukund-yedunuthala.github.io/about/"/>about</a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://mukund-yedunuthala.github.io/projects/"/>projects</a>
+                            </li>
+                        
+                            <li>
+                                
+                                <a class="nav-links no-hover-padding" href="https://mukund-yedunuthala.github.io/impressum/"/>impressum</a>
+                            </li>
+                        
+                    
+
+                    <li class="theme-switcher-wrapper js">
+                            <div class="theme-switcher" title="Toggle dark/light theme"></div>
+                        </li></ul>
+            </div>
+        
+    </nav>
+</header>
+
+    <div class="content">
+
+        
+        
+
+    
+
+
+
+<main>
+    <article>
+        <div class="article-title">
+            Image convolution using Message Passing Interface (MPI)
+        </div>
+
+        <ul class="meta">
+            
+
+            
+
+            <li title="185 words ">&nbsp;1 min read </li>
+
+            
+
+            
+        </ul>
+
+        
+
+        
+        
+
+        <section class="body">
+            
+            
+            <h4 id="repository-https-gitlab-com-mukund-yedunuthala-hpc-img-convolution"><a class="header-anchor no-hover-padding" href="#repository-https-gitlab-com-mukund-yedunuthala-hpc-img-convolution" aria-label="Anchor link for: repository-https-gitlab-com-mukund-yedunuthala-hpc-img-convolution"><span class="link-icon" aria-hidden="true"></span></a>
+Repository: <a rel="noopener" target="_blank" href="https://gitlab.com/mukund-yedunuthala/hpc-img-convolution">https://gitlab.com/mukund-yedunuthala/hpc-img-convolution</a></h4>
+<h4 id="documentation-https-mukund-yedunuthala-gitlab-io-hpc-img-convolution"><a class="header-anchor no-hover-padding" href="#documentation-https-mukund-yedunuthala-gitlab-io-hpc-img-convolution" aria-label="Anchor link for: documentation-https-mukund-yedunuthala-gitlab-io-hpc-img-convolution"><span class="link-icon" aria-hidden="true"></span></a>
+Documentation: <a rel="noopener" target="_blank" href="https://mukund-yedunuthala.gitlab.io/hpc-img-convolution/">https://mukund-yedunuthala.gitlab.io/hpc-img-convolution/</a></h4>
+<h1 id="introduction"><a class="header-anchor no-hover-padding" href="#introduction" aria-label="Anchor link for: introduction"><span class="link-icon" aria-hidden="true"></span></a>
+Introduction</h1>
+<p>This is a C++ project that applies convolution kernels to greyscale images
+using Message Passing Interface (MPI) to perform that in parallel. It is 
+part of a course called <em>High performance computing and optimization</em> at 
+TU Bergakademie Freiberg. This serves as a capstone project in an introductory
+course to parallel processing. </p>
+<h1 id="build"><a class="header-anchor no-hover-padding" href="#build" aria-label="Anchor link for: build"><span class="link-icon" aria-hidden="true"></span></a>
+Build</h1>
+<p>This project utilizes CMake build system. Assuming one is located at the root
+of the project, the following snippet details instructions to build the 
+executable.</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">mkdir</span></span><span class="z-meta z-function-call z-arguments z-shell"> build</span> <span class="z-keyword z-operator z-logical z-and z-shell">&amp;&amp;</span> <span class="z-meta z-function-call z-shell"><span class="z-support z-function z-cd z-shell">cd</span></span><span class="z-meta z-function-call z-arguments z-shell"> build</span>
+<span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">cmake</span></span><span class="z-meta z-function-call z-arguments z-shell"> ..</span>
+<span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">make</span></span>
+</span></code></pre>
+<p>It offers a couple of checks and options that aim to provide flexibility. E.g.</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">mkdir</span></span><span class="z-meta z-function-call z-arguments z-shell"> build</span> <span class="z-keyword z-operator z-logical z-and z-shell">&amp;&amp;</span> <span class="z-meta z-function-call z-shell"><span class="z-support z-function z-cd z-shell">cd</span></span><span class="z-meta z-function-call z-arguments z-shell"> build</span>
+<span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">cmake</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>DWITH_MPI</span><span class="z-keyword z-operator z-assignment z-option z-shell">=</span>False ..</span>
+<span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">make</span></span>
+</span></code></pre>
+<p>This builds the executable that is entirely serialized. Might be more suitable for 
+GNU compiler. The default is <code>WITH_MPI=True</code>.</p>
+<pre data-lang="bash" class="language-bash z-code"><code class="language-bash" data-lang="bash"><span class="z-source z-shell z-bash"><span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">mkdir</span></span><span class="z-meta z-function-call z-arguments z-shell"> build</span> <span class="z-keyword z-operator z-logical z-and z-shell">&amp;&amp;</span> <span class="z-meta z-function-call z-shell"><span class="z-support z-function z-cd z-shell">cd</span></span><span class="z-meta z-function-call z-arguments z-shell"> build</span>
+<span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">cmake</span></span><span class="z-meta z-function-call z-arguments z-shell"><span class="z-variable z-parameter z-option z-shell"><span class="z-punctuation z-definition z-parameter z-shell"> -</span>DWITH_DOXYGEN</span><span class="z-keyword z-operator z-assignment z-option z-shell">=</span>True ..</span>
+<span class="z-meta z-function-call z-shell"><span class="z-variable z-function z-shell">make</span></span><span class="z-meta z-function-call z-arguments z-shell"> docs</span>
+</span></code></pre>
+<p>This generates the doxyfile that could be used to generate documentation with <code>make</code>.
+The default is <code>WITH_DOXYGEN=False</code>. WIP.</p>
+
+        </section>
+
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        
+        
+
+        
+        
+
+        
+
+    </article>
+</main>
+
+
+
+
+
+
+    </div>
+    
+<footer>
+    <section>
+        <nav class="socials nav-navs">
+                <ul><li class="js"><a rel="noopener noreferrer" target="_blank" class="nav-links no-hover-padding social" href="#" data-encoded-email="bXVrdW5kLnllZHVudXRoYWxhQG91dGxvb2suZGU="><img alt="email" title="email" src="https://mukund-yedunuthala.github.io/social_icons/email.svg">
+                            </a>
+                        </li>
+                        <li>
+                            <a rel="noopener noreferrer me" target="_blank" class="nav-links no-hover-padding social" href=https://github.com/mukund-yedunuthala/>
+                                <img alt=GitHub title=GitHub src="https://mukund-yedunuthala.github.io/social_icons/github.svg">
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a rel="noopener noreferrer me" target="_blank" class="nav-links no-hover-padding social" href=https://gitlab.com/mukund-yedunuthala/>
+                                <img alt=Gitlab title=Gitlab src="https://mukund-yedunuthala.github.io/social_icons/gitlab.svg">
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a rel="noopener noreferrer me" target="_blank" class="nav-links no-hover-padding social" href=https://firefish.social/@mukskashyap>
+                                <img alt=Firefish title=Firefish src="https://mukund-yedunuthala.github.io/social_icons/firefish.svg">
+                            </a>
+                        </li>
+                    
+                        <li>
+                            <a rel="noopener noreferrer me" target="_blank" class="nav-links no-hover-padding social" href=https://pixelfed.social/@mukskashyap>
+                                <img alt=Pixelfed title=Pixelfed src="https://mukund-yedunuthala.github.io/social_icons/pixelfed.svg">
+                            </a>
+                        </li>
+                    
+                </ul>
+            
+        </nav>
+        <div class="credits">
+            <small>
+                
+                    <p><p>© 2023 Venkata Mukund Kashyap Yedunuthala • Unless otherwise noted, the content in this website is available under the <a rel="noopener" target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> license.</p>
+</p>Powered by&nbsp;<a href="https://www.getzola.org" target="_blank">Zola</a>&nbsp;&&nbsp;<a href="https://github.com/welpo/tabi" target="_blank">tabi</a>
+
+                
+                •
+                    <a href="https:&#x2F;&#x2F;gitlab.com&#x2F;mukund-yedunuthala&#x2F;portfolio-zola-tabi" target="_blank">Site source</a></small>
+        </div>
+    </section>
+
+    <script src="https://mukund-yedunuthala.github.io/js/decodeMail.min.js" async></script></footer>
+
+
+    <script defer src="https://mukund-yedunuthala.github.io/js/copyCodeToClipboard.min.js"/></script></body>
+
+</html>
